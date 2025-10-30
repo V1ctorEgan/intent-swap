@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-  
+  <div className='bg-red-500 py-3'>
+we 
+  </div>
     </>
   )
 }
