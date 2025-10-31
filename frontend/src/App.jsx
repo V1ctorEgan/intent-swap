@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Zap, DollarSign, Target, CheckCircle , Wallet , Shield , LockIcon } from 'lucide-react';
 import Header from './pages/Header';
-import ScrollingCoins from './components/Scrollingcoins';
+// import ScrollingCoins from './components/Scrollingcoins';
 import ScrollingBackedBy from './components/ScrollingBackedBy';
 
 // NOTE: place images into /src/assets/cards/*.jpg (see below)
@@ -22,7 +22,7 @@ export default function Landing() {
       <Header />
       <main className="relative z-10">
         <HeroSection />
-        <ScrollingCoins />
+        {/* <ScrollingCoins /> */}
         <ScrollingBackedBy />
         <HowItWorks />
         <CoinSwapAnimation/>
