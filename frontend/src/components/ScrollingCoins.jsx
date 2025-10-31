@@ -1,25 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const tokens = ["BTC", "ETH", "SOL", "USDT", "BNB", "ADA", "XRP", "DOGE", "INT", "BDAG"];
+// (D) Token logo URLs - add or remove as needed
+// You can replace these with your own logos later
+const tokens = ["BTC", "ETH", "SOL", "USDT", "BNB", "ADA", "XRP", "DOGE", "INT", "BDAG"]
 
 export default function ScrollingCoins() {
   return (
-    <div className="w-full overflow-hidden py-4 select-none relative">
+    <div className="w-full overflow-hidden py-4 select-none">
       <motion.div
-        className="flex whitespace-nowrap"
-        animate={{ x: ["0%", "-100%"] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+        className="flex gap-10 whitespace-nowrap text-black"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
       >
         {[...tokens, ...tokens].map((coin, index) => (
-          <span
+          <motion.div
             key={index}
-            className="mx-6 text-[1.25rem] font-semibold tracking-wide opacity-90 hover:opacity-100 transition-all duration-200"
+            whileHover={{ scale: 1.15, rotateY: 8 }} // 3D tilt on hover
+            className="coin-base text-black px-1 py-1 bg-amber-300 rounded-full "
           >
+            {/* <img src={coin.logo} alt={coin.symbol} className="coin-img" /> */}
             {coin}
-          </span>
+          </motion.div>
         ))}
       </motion.div>
+      
     </div>
   );
 }

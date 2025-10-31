@@ -63,12 +63,12 @@ const ConnectButton = ({ onClick, small }) => {
 /* -------------------- HERO -------------------- */
 const HeroSection = ({ parallaxX, parallaxY }) => {
   return (
-    <section className=" pb-10 px-6 min-h-screen flex items-center">
+    <section className=" mt-5 md:mt-0 pb-10 px-6 min-h-screen flex items-center">
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left: copy + CTA */}
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1
-            className="hero-headline text-6xl md:text-5xl font-extrabold leading-tight mb-4"
+            className="hero-headline text-4xl md:text-5xl font-extrabold leading-tight mb-4"
             style={{ transform: `translate(${parallaxX * 0.6}px, ${parallaxY * 0.6}px)` }}
           >
             <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-200 via-white to-cyan-200 drop-shadow-[0_6px_30px_rgba(69,90,255,0.08)]">
@@ -112,7 +112,7 @@ const HeroSection = ({ parallaxX, parallaxY }) => {
               <div className="w-8 h-8 rounded-full bg-[#06B6D4]/20 flex items-center justify-center text-[#06B6D4]">⚡</div>
               <div>
                 <div className="font-semibold text-sm text-slate-100">Instant routing</div>
-                <div className="text-xs text-slate-400">Sub-second swap estimates</div>
+                <div className="text-xs text-slate-400 hidden md:block">Sub-second swap estimates</div>
               </div>
             </div>
 
@@ -120,7 +120,7 @@ const HeroSection = ({ parallaxX, parallaxY }) => {
               <div className="w-8 h-8 rounded-full bg-[#6D28D9]/20 flex items-center justify-center text-[#6D28D9]">🔒</div>
               <div>
                 <div className="font-semibold text-sm text-slate-100">Immutable receipts</div>
-                <div className="text-xs text-slate-400">Future smart contract support</div>
+                <div className="text-xs text-slate-400 hidden md:block">Future smart contract support</div>
               </div>
             </div>
           </div>
