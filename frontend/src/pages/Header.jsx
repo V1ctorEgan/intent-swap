@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Logo from '../assets/Logo.svg'; // add your logo here
+import Logo from '../assets/logo.svg'; 
 import { LayoutDashboard, ArrowRightLeft, History, Settings, Wallet } from 'lucide-react';
 
 const navItems = [
