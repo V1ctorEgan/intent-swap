@@ -3,3 +3,83 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; */
 
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* diagonal clip-path (top-left slice) */
+.card-clip {
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+}
+
+/* .coin-item {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #ffdd55, #c89b2b, #8c6b1f);
+  box-shadow:
+    0 4px 12px rgba(255, 215, 0, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 221, 85, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.coin-item:hover {
+  transform: scale(1.12) rotate(3deg);
+} */
+
+
+.coin-base {
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #25407b, #17178b, #0f44a5);
+  border: 1px solid rgba(220, 220, 220, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow:
+    0 0 20px rgba(180, 220, 255, 0.25),
+    inset 0 2px 3px rgba(255, 255, 255, 0.4),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.35); */
+  animation: coinSpin 5s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.coin-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+/* Silver coin rotation (A) */
+@keyframes coinSpin {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  50% { transform: rotateY(180deg) rotateX(6deg); }
+  100% { transform: rotateY(360deg) rotateX(0deg); }
+}
+
+/* Slight perspective for 3D effect (B) */
+.coin-base:hover {
+  transform: perspective(300px) rotateY(12deg) scale(1.14);
+}
+
+/* Neon aura glow (C) */
+.coin-base::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* border: 2px solid rgba(80, 200, 255, 0.3); */
+  filter: blur(12px);
+  z-index: -1;
+}
+
